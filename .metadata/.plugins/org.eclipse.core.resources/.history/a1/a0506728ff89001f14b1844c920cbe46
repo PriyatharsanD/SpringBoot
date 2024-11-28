@@ -1,0 +1,8 @@
+package com.priya;
+
+public class Trainer {
+	int id;
+	String name;
+	String subject;
+
+}

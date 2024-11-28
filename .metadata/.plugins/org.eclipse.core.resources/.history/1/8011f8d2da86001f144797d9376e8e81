@@ -1,0 +1,10 @@
+spring.application.name=AddFruit
+
+spring.h2.console.enabled=true
+
+spring.datasource.url=jdbc:h2:mem:fruit
+
+spring.datasource.username=priya
+spring.datasource.password=lion
+
+server.port=5050

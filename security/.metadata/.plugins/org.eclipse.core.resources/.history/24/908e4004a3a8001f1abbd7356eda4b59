@@ -1,0 +1,18 @@
+package com.priya.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.priya.model.Users;
+
+@Service
+public class UserService {
+
+	@Autowired
+	UserRepo repo;
+	public Users register(Users user) {
+		
+		return null;
+	}
+
+}

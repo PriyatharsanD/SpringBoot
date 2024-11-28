@@ -1,0 +1,18 @@
+package com.priya;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class Controllers {
+	@Autowired
+	TrainerRep rep;
+	
+	@PostMapping("/trainer/")
+	public Trainer postTrainer(Trainer t)
+	{
+		rep.save(t);
+		return t;
+	}
+}

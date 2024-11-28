@@ -1,0 +1,1 @@
+insert into fruit values(100,'Apple');

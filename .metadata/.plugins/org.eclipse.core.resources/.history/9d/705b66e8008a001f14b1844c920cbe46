@@ -1,0 +1,6 @@
+spring.application.name=Trainer
+
+spring.h2.console.enabled=true
+
+spring.datasource.username=priya
+spring.datasource.password=lion

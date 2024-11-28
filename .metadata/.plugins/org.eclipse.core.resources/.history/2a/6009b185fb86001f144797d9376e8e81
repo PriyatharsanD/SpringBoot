@@ -1,0 +1,11 @@
+package com.priya;
+
+import java.util.List;
+
+import org.springframework.data.repository.CrudRepository;
+
+public interface FruitRep extends CrudRepository<Fruit, String> {
+	
+	List<Fruit> fetchByprice(double price);
+
+}

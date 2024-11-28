@@ -1,0 +1,11 @@
+package com.priya.model;
+
+import jakarta.persistence.Entity;
+
+@Entity
+public class Users {
+	@Id
+	int id;
+	String username;
+	String password;
+}

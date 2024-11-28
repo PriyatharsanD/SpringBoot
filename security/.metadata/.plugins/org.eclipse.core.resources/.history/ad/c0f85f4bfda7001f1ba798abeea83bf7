@@ -1,0 +1,3 @@
+spring.application.name=Logging
+
+logging.console.com.priya.controller=info

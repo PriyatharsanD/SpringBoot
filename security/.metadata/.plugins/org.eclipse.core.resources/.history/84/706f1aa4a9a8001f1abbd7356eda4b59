@@ -1,0 +1,20 @@
+package com.priya.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.priya.model.JwtFilter;
+
+@Service
+public class JwtService {
+	
+	@Autowired
+	JwtFilter jwtFilter;
+	public String generateTokens(String username) {
+		
+		return null;
+	}
+	
+	
+
+}

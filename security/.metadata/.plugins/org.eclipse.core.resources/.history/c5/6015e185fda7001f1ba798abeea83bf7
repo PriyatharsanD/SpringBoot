@@ -1,0 +1,4 @@
+spring.application.name=Logging
+
+logging.console.com.priya.controller=info
+logging.pattern.console=%d - %M - %m - %n

@@ -1,0 +1,12 @@
+spring.application.name=AddFruit
+
+spring.h2.console.enabled=true
+
+spring.datasource.url=jdbc:mysql://localhost:3306/fruit
+
+spring.datasource.username=priya
+spring.datasource.password=lion
+
+server.port=5050
+
+spring.mvc.view.suffix=.jsp

@@ -1,0 +1,35 @@
+package com.priya.service;
+
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.priya.model.JwtFilter;
+import com.priya.model.Users;
+
+import io.jsonwebtoken.Jwts;
+
+@Service
+public class JwtService {
+	
+	@Autowired
+	JwtFilter jwtFilter;
+	public String generateTokens(Users user) {
+		
+		Map<String,Object> claims = new HashMap();
+		return Jwts.builder()
+				.claims()
+				.add(claims)
+				.subject(user.getUsername())
+				.issuedAt(new Date(System.currentTimeMillis()))
+				.expiration(new Date(System.currentTimeMillis()+60*60*40))
+				.compact();
+
+	}
+	
+	
+
+}

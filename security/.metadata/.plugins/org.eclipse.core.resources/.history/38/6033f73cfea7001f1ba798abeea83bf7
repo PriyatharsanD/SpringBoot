@@ -1,0 +1,8 @@
+spring.application.name=Logging
+
+logging.level.com.priya.controller=info
+logging.pattern.console=%d - [%M] - %m - %n
+
+logging.level.com.priya.service=trace
+logging.file.name=log/logging.log
+logging.pattern.file= %d - %c - [%M] - %n

@@ -1,0 +1,1 @@
+insert into trainer values(1278,'Priya','Java')

@@ -1,0 +1,55 @@
+package com.priya.service;
+
+import java.security.Key;
+import java.security.NoSuchAlgorithmException;
+import java.util.Base64;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+
+import javax.crypto.KeyGenerator;
+import javax.crypto.SecretKey;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.stereotype.Service;
+
+import com.priya.model.JwtFilter;
+import com.priya.model.Users;
+
+import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.io.Decoders;
+import io.jsonwebtoken.security.Keys;
+
+@Service
+public class JwtService {
+	
+	 private final String SECRET_KEY = "your_secret_key";
+
+	    public String extractUsername(String token) {
+	        return extractClaim(token, Claims::getSubject);
+	    }
+
+	    public <T> T extractClaim(String token, Function<Claims, T> claimsResolver) {
+	        Claims claims = extractAllClaims(token);
+	        return claimsResolver.apply(claims);
+	    }
+
+	    private Claims extractAllClaims(String token) {
+	        return Jwts.parserBuilder()
+	                   .setSigningKey(SECRET_KEY)
+	                   .build()
+	                   .parseClaimsJws(token)
+	                   .getBody();
+	    }
+
+	    public Boolean validateToken(String token, String username) {
+	        final String extractedUsername = extractUsername(token);
+	        return extractedUsername.equals(username) && !isTokenExpired(token);
+	    }
+
+	    private Boolean isTokenExpired(String token) {
+	        return extractClaim(token, Claims::getExpiration).before(new Date());
+	    }
+}

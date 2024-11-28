@@ -1,0 +1,21 @@
+package com.priya.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.stereotype.Service;
+
+import com.priya.model.Users;
+import com.priya.repo.UserRepo;
+
+@Service
+public class UserService {
+
+	@Autowired
+	BCryptPasswordEncoder encoder;
+	@Autowired
+	UserRepo repo;
+	public Users register(Users user) {
+		return user;
+	}
+
+}
